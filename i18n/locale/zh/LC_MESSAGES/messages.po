@@ -1,0 +1,253 @@
+# Chinese translations for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-04-17 09:58+0000\n"
+"PO-Revision-Date: 2025-04-17 10:02+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: i18n/__init__.py:32
+msgid ""
+"GUI wallpaper setter for Wayland and X11. It works as a frontend for feh,"
+" swaybg, wallutils, hyprpaper, mpvpaper, and swww."
+msgstr ""
+
+#: i18n/__init__.py:38
+msgid ""
+"For more information, visit:\n"
+"https://github.com/anufrievroman/waypaper"
+msgstr ""
+
+#: i18n/__init__.py:43
+msgid "print version of the program"
+msgstr ""
+
+#: i18n/__init__.py:47
+msgid "specify how to fill the screen with chosen image"
+msgstr ""
+
+#: i18n/__init__.py:51
+msgid "restore last wallpaper"
+msgstr ""
+
+#: i18n/__init__.py:55
+msgid "specify which backend to use to set wallpaper"
+msgstr ""
+
+#: i18n/__init__.py:59
+msgid "set a random wallpaper"
+msgstr ""
+
+#: i18n/__init__.py:63
+msgid "lists some parameters in json to standard out"
+msgstr ""
+
+#: i18n/__init__.py:67
+msgid "set the specified wallpaper"
+msgstr ""
+
+#: i18n/__init__.py:71
+msgid "specify which folder to scan for wallpapers"
+msgstr ""
+
+#: i18n/__init__.py:75
+msgid "specify a custom file to store the application state"
+msgstr ""
+
+#: i18n/__init__.py:79
+msgid "specify desired monitor using its name"
+msgstr ""
+
+#: i18n/__init__.py:83
+msgid "prevents running post_command set in config"
+msgstr ""
+
+#: i18n/__init__.py:87
+msgid "show the relative path in the tooltip"
+msgstr ""
+
+#: i18n/__init__.py:91
+msgid "Select"
+msgstr ""
+
+#: i18n/__init__.py:95
+msgid "Refresh"
+msgstr ""
+
+#: i18n/__init__.py:99
+msgid "Clear"
+msgstr ""
+
+#: i18n/__init__.py:103
+msgid "Start auto-change"
+msgstr ""
+
+#: i18n/__init__.py:107
+msgid "Stop all"
+msgstr ""
+
+#: i18n/__init__.py:111
+msgid "Sound"
+msgstr ""
+
+#: i18n/__init__.py:115
+msgid "Pause"
+msgstr ""
+
+#: i18n/__init__.py:119
+msgid "Search"
+msgstr ""
+
+#: i18n/__init__.py:123
+msgid "Random"
+msgstr ""
+
+#: i18n/__init__.py:127
+msgid "Exit"
+msgstr ""
+
+#: i18n/__init__.py:131
+msgid "Options"
+msgstr ""
+
+#: i18n/__init__.py:135
+msgid "Show subfolders"
+msgstr ""
+
+#: i18n/__init__.py:139
+msgid "Show all subfolders"
+msgstr ""
+
+#: i18n/__init__.py:143
+msgid "Show hidden"
+msgstr ""
+
+#: i18n/__init__.py:147
+msgid "Show gifs only"
+msgstr ""
+
+#: i18n/__init__.py:151
+msgid "Show transition options"
+msgstr ""
+
+#: i18n/__init__.py:155
+msgid "Folder"
+msgstr ""
+
+#: i18n/__init__.py:159
+msgid "Please choose a folder"
+msgstr ""
+
+#: i18n/__init__.py:163
+msgid "Caching wallpapers..."
+msgstr ""
+
+#: i18n/__init__.py:167
+msgid "Show path in tooltip"
+msgstr ""
+
+#: i18n/__init__.py:173
+msgid ""
+"Waypaper's hotkeys:\n"
+"\n"
+"hjkl - Navigation (←↓↑→)\n"
+"Enter - Set selected wallpaper\n"
+"f - Change wallpaper folder\n"
+"g - Scroll to top\n"
+"G - Scroll to bottom\n"
+"R - Set random wallpaper\n"
+"r - Recache wallpapers\n"
+". - Toggle hidden images\n"
+"s - Toggle images in subfolders\n"
+"/ - Search\n"
+"? - Help\n"
+"q - Exit\n"
+"\n"
+msgstr ""
+
+#: i18n/__init__.py:182
+msgid "Error deleting cache"
+msgstr ""
+
+#: i18n/__init__.py:188
+msgid ""
+"Looks like none of the wallpaper backends is installed in the system.\n"
+"Use your package manager to install at least one of these backends:\n"
+"\n"
+"- swaybg (Wayland)\n"
+"- swww (Wayland)\n"
+"- hyprpaper (Wayland)\n"
+"- feh (Xorg)\n"
+"- wallutils (Xorg & Wayland)\n"
+"- mpvpaper (Xorg & Wayland)\n"
+"\n"
+msgstr ""
+
+#: i18n/__init__.py:199
+msgid "Recache the folder of images"
+msgstr ""
+
+#: i18n/__init__.py:203
+msgid "Choose fill type"
+msgstr ""
+
+#: i18n/__init__.py:207
+msgid "Choose backend"
+msgstr ""
+
+#: i18n/__init__.py:211
+msgid "Choose sorting type"
+msgstr ""
+
+#: i18n/__init__.py:215
+msgid "Choose display"
+msgstr ""
+
+#: i18n/__init__.py:219
+msgid "Choose background color"
+msgstr ""
+
+#: i18n/__init__.py:223
+msgid "Set random wallpaper"
+msgstr ""
+
+#: i18n/__init__.py:227
+msgid "Exit the application"
+msgstr ""
+
+#: i18n/__init__.py:231
+msgid "Choose transition type"
+msgstr ""
+
+#: i18n/__init__.py:235
+msgid "Stop all all mpv processes"
+msgstr ""
+
+#: i18n/__init__.py:239
+msgid "Play/Pause video wallpaper"
+msgstr ""
+
+#: i18n/__init__.py:243
+msgid "Play sound of the video"
+msgstr ""
+
+#: i18n/__init__.py:247
+msgid "How often to automatically change wallpaper"
+msgstr ""
+
+#: i18n/__init__.py:251
+msgid "Initiate automatic change of wallpaper after a time interval"
+msgstr ""
+

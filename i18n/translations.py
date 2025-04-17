@@ -7,7 +7,9 @@ To add a new language, add a new class, and update the load_language() function.
 class English:
     def __init__(self):
         self.msg_desc = "GUI wallpaper setter for Wayland and X11. It works as a frontend for feh, swaybg, wallutils, hyprpaper, mpvpaper, and swww."
-        self.msg_info = "For more information, visit:\nhttps://github.com/anufrievroman/waypaper"
+        self.msg_info = (
+            "For more information, visit:\nhttps://github.com/anufrievroman/waypaper"
+        )
 
         self.msg_arg_help = "print version of the program"
         self.msg_arg_fill = "specify how to fill the screen with chosen image"
@@ -49,11 +51,17 @@ class English:
         self.msg_help += self.msg_info
 
         self.err_cache = "Error deleting cache"
-        self.err_backend = "Looks like none of the wallpaper backends is installed in the system.\n"
-        self.err_backend += "Use your package manager to install at least one of these backends:\n\n"
+        self.err_backend = (
+            "Looks like none of the wallpaper backends is installed in the system.\n"
+        )
+        self.err_backend += (
+            "Use your package manager to install at least one of these backends:\n\n"
+        )
         self.err_backend += "- swaybg (Wayland)\n- swww (Wayland)\n"
         self.err_backend += "- hyprpaper (Wayland)\n- feh (Xorg)\n"
-        self.err_backend += "- wallutils (Xorg & Wayland)\n- mpvpaper (Xorg & Wayland)\n\n"
+        self.err_backend += (
+            "- wallutils (Xorg & Wayland)\n- mpvpaper (Xorg & Wayland)\n\n"
+        )
         self.err_backend += self.msg_info
 
         self.tip_refresh = "Recache the folder of images"
@@ -84,7 +92,9 @@ class German:
         self.msg_arg_rand = "wählt ein zufälliges Hintergrundbild aus"
         self.msg_arg_list = "lists some parameters in json to standard out"
         self.msg_arg_wall = "setzt das angegebene Hintergrundbild"
-        self.msg_arg_folder = "legt fest, welcher Ordner nach Hintergrundbildern durchsucht werden soll"
+        self.msg_arg_folder = (
+            "legt fest, welcher Ordner nach Hintergrundbildern durchsucht werden soll"
+        )
         self.msg_arg_statefile = "specify a custom file to store the application state"
         self.msg_arg_monitor = "geben Sie den gewünschten Monitor mit seinem Namen an"
         self.msg_arg_post = "prevents running post_command set in config"
@@ -119,10 +129,14 @@ class German:
 
         self.err_cache = "Fehler beim Löschen des Zwischenspeichers"
         self.err_backend = "Es konnte kein Hintergrundbild-Backend gefunden werden.\n"
-        self.err_backend += "Installieren Sie mindestens eines der folgenden Backends:\n\n"
+        self.err_backend += (
+            "Installieren Sie mindestens eines der folgenden Backends:\n\n"
+        )
         self.err_backend += "- swaybg (Wayland)\n- swww (Wayland)\n"
         self.err_backend += "- hyprpaper (Wayland)\n- feh (Xorg)\n"
-        self.err_backend += "- wallutils (Xorg & Wayland)\n- mpvpaper (Xorg & Wayland)\n\n"
+        self.err_backend += (
+            "- wallutils (Xorg & Wayland)\n- mpvpaper (Xorg & Wayland)\n\n"
+        )
         self.err_backend += self.msg_info
 
         self.tip_refresh = "Erneutes einlesen des Hintergrundbild-Ordners"
@@ -140,6 +154,7 @@ class German:
         self.tip_timer = "How often to automatically change wallpaper"
         self.tip_start = "Initiate automatic change of wallpaper after a time interval"
 
+
 class French:
     def __init__(self):
         self.msg_desc = "Sélecteur de papier peint graphique pour Wayland et X11. Il fonctionne comme une interface pour feh, swaybg, wallutils, hyprpaper, mpvpaper, et swww."
@@ -148,7 +163,9 @@ class French:
         self.msg_arg_help = "afficher la version du programme"
         self.msg_arg_fill = "spécifier comment remplir l'écran avec l'image choisie"
         self.msg_arg_rest = "restaurer le dernier papier peint"
-        self.msg_arg_back = "spécifier quel backend utiliser pour définir le papier peint"
+        self.msg_arg_back = (
+            "spécifier quel backend utiliser pour définir le papier peint"
+        )
         self.msg_arg_rand = "définir un papier peint aléatoire"
         self.msg_arg_list = "lists some parameters in json to standard out"
         self.msg_arg_wall = "set the specified wallpaper"
@@ -189,7 +206,9 @@ class French:
         self.err_backend += "Utilisez votre gestionnaire de paquets pour installer au moins l'un de ces backends :\n\n"
         self.err_backend += "- swaybg (Wayland)\n- swww (Wayland)\n"
         self.err_backend += "- hyprpaper (Wayland)\n- feh (Xorg)\n"
-        self.err_backend += "- wallutils (Xorg & Wayland)\n- mpvpaper (Xorg & Wayland)\n\n"
+        self.err_backend += (
+            "- wallutils (Xorg & Wayland)\n- mpvpaper (Xorg & Wayland)\n\n"
+        )
         self.err_backend += self.msg_info
 
         self.tip_refresh = "Recréer le dossier d'images"
@@ -206,6 +225,7 @@ class French:
         self.tip_mpv_sound = "Play sound of the video"
         self.tip_timer = "How often to automatically change wallpaper"
         self.tip_start = "Initiate automatic change of wallpaper after a time interval"
+
 
 class Polish:
     def __init__(self):
@@ -253,11 +273,17 @@ class Polish:
 
         self.err_cache = "Błąd w usuwaniu bufera"
         self.err_backend = "Żadne zaplecze nie zostało znalezione.\n"
-        self.err_backend += "Use your package manager to install at least one of these backends:\n\n"
-        self.err_backend += "Użyj twojego instalera, żeby zainstalować co najmiej jedno zaplecze:\n\n"
+        self.err_backend += (
+            "Use your package manager to install at least one of these backends:\n\n"
+        )
+        self.err_backend += (
+            "Użyj twojego instalera, żeby zainstalować co najmiej jedno zaplecze:\n\n"
+        )
         self.err_backend += "- swaybg (Wayland)\n- swww (Wayland)\n"
         self.err_backend += "- hyprpaper (Wayland)\n- feh (Xorg)\n"
-        self.err_backend += "- wallutils (Xorg & Wayland)\n- mpvpaper (Xorg & Wayland)\n\n"
+        self.err_backend += (
+            "- wallutils (Xorg & Wayland)\n- mpvpaper (Xorg & Wayland)\n\n"
+        )
         self.err_backend += self.msg_info
 
         self.tip_refresh = "Ponownie buferuj folder tapet"
@@ -274,6 +300,7 @@ class Polish:
         self.tip_mpv_sound = "Play sound of the video"
         self.tip_timer = "How often to automatically change wallpaper"
         self.tip_start = "Initiate automatic change of wallpaper after a time interval"
+
 
 class Russian:
     def __init__(self):
@@ -324,7 +351,9 @@ class Russian:
         self.err_backend += "Используйте менеджер пакетов для установки хотя бы одного из следующих бэкендов:\n\n"
         self.err_backend += "- swaybg (Wayland)\n- swww (Wayland)\n"
         self.err_backend += "- hyprpaper (Wayland)\n- feh (Xorg)\n"
-        self.err_backend += "- wallutils (Xorg & Wayland)\n- mpvpaper (Xorg & Wayland)\n\n"
+        self.err_backend += (
+            "- wallutils (Xorg & Wayland)\n- mpvpaper (Xorg & Wayland)\n\n"
+        )
         self.err_backend += self.msg_info
 
         self.tip_refresh = "Обновить папку с изображениями"
@@ -335,7 +364,7 @@ class Russian:
         self.tip_color = "Выбрать цвет фона"
         self.tip_random = "Установить случайные обои"
         self.tip_exit = "Выйти из приложения"
-        self.tip_transition =  "Выберите тип перехода"
+        self.tip_transition = "Выберите тип перехода"
         self.tip_mpv_stop = "Остановить все mpv процессы"
         self.tip_mpv_pause = "Плей/пауза видео-обоев"
         self.tip_mpv_sound = "Проигрывать звук видео-обоев"
@@ -356,7 +385,9 @@ class Belarusian:
         self.msg_arg_list = "вывесці шпалеры і матыноры ў фармаце json"
         self.msg_arg_wall = "пазначыць шлях да выявы"
         self.msg_arg_folder = "ўкажыце, які тэчку сканаваць для выявы"
-        self.msg_arg_statefile = "ўкажыце карыстацкі файл для захавання стану прыкладання"
+        self.msg_arg_statefile = (
+            "ўкажыце карыстацкі файл для захавання стану прыкладання"
+        )
         self.msg_arg_monitor = "określ żądany monitor, używając jego nazwy"
         self.msg_arg_post = "prevents running post_command set in config"
         self.msg_arg_show_path_in_tooltip = "show the relative path in the tooltip"
@@ -392,7 +423,9 @@ class Belarusian:
         self.err_backend += "Выкарыстоўвайце менеджэр пакетаў для ўстаноўкі хаця б аднаго з наступных бэкендаў:\n\n"
         self.err_backend += "- swaybg (Wayland)\n- swww (Wayland)\n"
         self.err_backend += "- hyprpaper (Wayland)\n- feh (Xorg)\n"
-        self.err_backend += "- wallutils (Xorg & Wayland)\n- mpvpaper (Xorg & Wayland)\n\n"
+        self.err_backend += (
+            "- wallutils (Xorg & Wayland)\n- mpvpaper (Xorg & Wayland)\n\n"
+        )
         self.err_backend += self.msg_info
 
         self.tip_refresh = "Абнавіць тэчку з выявамі"
@@ -414,7 +447,9 @@ class Belarusian:
 class Chinese:
     def __init__(self):
         self.msg_desc = "Wayland 和 X11 的 GUI 壁纸设置器。它用作 feh、swaybg、hyprpaper、mpvpaper、wallutils 和 swww 的前端。"
-        self.msg_info = "欲了解更多信息，请访问:\nhttps://github.com/anufrievroman/waypaper"
+        self.msg_info = (
+            "欲了解更多信息，请访问:\nhttps://github.com/anufrievroman/waypaper"
+        )
 
         self.msg_arg_help = "版本信息"
         self.msg_arg_fill = "指定所选图像填充屏幕"
@@ -451,7 +486,9 @@ class Chinese:
         self.msg_show_path_in_tooltip = "Show path in tooltip"
 
         self.msg_help = "Waypaper 的热键：\n\nhjkl -导航 (←↓↑→)\nf -更改壁纸文件夹\n"
-        self.msg_help += "g -滚动到顶部\nG -滚动到底部\nR -设置随机壁纸\nr -重新缓存壁纸\n"
+        self.msg_help += (
+            "g -滚动到顶部\nG -滚动到底部\nR -设置随机壁纸\nr -重新缓存壁纸\n"
+        )
         self.msg_help += ". - 包括/排除隐藏图像\ns -包含/排除子文件夹中的图像\n/ - Search\n？ -帮助\nq -退出\n\n"
         self.msg_help += self.msg_info
 
@@ -460,7 +497,9 @@ class Chinese:
         self.err_backend += "使用包管理器安装至少以下后端之一：\n\n"
         self.err_backend += "- swaybg (Wayland)\n- swww (Wayland)\n"
         self.err_backend += "- hyprpaper (Wayland)\n- feh (Xorg)\n"
-        self.err_backend += "- wallutils (Xorg & Wayland)\n- mpvpaper (Xorg & Wayland)\n\n"
+        self.err_backend += (
+            "- wallutils (Xorg & Wayland)\n- mpvpaper (Xorg & Wayland)\n\n"
+        )
         self.err_backend += self.msg_info
 
         self.tip_refresh = "重新缓存图像文件夹"
@@ -478,10 +517,13 @@ class Chinese:
         self.tip_timer = "How often to automatically change wallpaper"
         self.tip_start = "Initiate automatic change of wallpaper after a time interval"
 
+
 class TraditionalChinese:
     def __init__(self):
         self.msg_desc = "Wayland 和 X11 的 GUI 壁紙選擇器。是能作為 feh、swaybg、wallutils、hyprpaper、mpvpaper 和 swww 的前端。"
-        self.msg_info = "如要更多資訊, 請前往:\nhttps://github.com/anufrievroman/waypaper"
+        self.msg_info = (
+            "如要更多資訊, 請前往:\nhttps://github.com/anufrievroman/waypaper"
+        )
 
         self.msg_arg_help = "版本"
         self.msg_arg_fill = "壁紙填滿螢幕的方式"
@@ -518,7 +560,9 @@ class TraditionalChinese:
         self.msg_show_path_in_tooltip = "Show path in tooltip"
 
         self.msg_help = "Waypaper 的快捷鍵:\n\nhjkl - 行動 (←↓↑→)\nEnter - 設定選擇壁紙\nf - 選擇壁紙文件夾\n"
-        self.msg_help += "g - 滾動到頂部\nG - 滾動到底部\nR - 隨機壁紙\nr - 重新玩全壁紙\n"
+        self.msg_help += (
+            "g - 滾動到頂部\nG - 滾動到底部\nR - 隨機壁紙\nr - 重新玩全壁紙\n"
+        )
         self.msg_help += ". - 顯示隱藏的圖片\ns - 顯示在子文件夾的圖片\n/ - Search\n? - 協助\nq - 退出\n\n"
         self.msg_help += self.msg_info
 
@@ -527,7 +571,9 @@ class TraditionalChinese:
         self.err_backend += "請使用包裝管理器安裝至少一個後端:\n\n"
         self.err_backend += "- swaybg (Wayland)\n- swww (Wayland)\n"
         self.err_backend += "- hyprpaper (Wayland)\n- feh (Xorg)\n"
-        self.err_backend += "- wallutils (Xorg & Wayland)\n- mpvpaper (Xorg & Wayland)\n\n"
+        self.err_backend += (
+            "- wallutils (Xorg & Wayland)\n- mpvpaper (Xorg & Wayland)\n\n"
+        )
         self.err_backend += self.msg_info
 
         self.tip_refresh = "重新緩存在文件夾中的圖片"
@@ -549,14 +595,22 @@ class TraditionalChinese:
 class Spanish:
     def __init__(self):
         self.msg_desc = 'Cambiador de fondo de pantalla para "Wayland" y "X11". Trabaja como una interfaz gráfica para "feh", "swaybg", "wallutils", "swww" y "hyprpaper".'
-        self.msg_info = "Para más información, visita:\nhttps://github.com/anufrievroman/waypaper"
+        self.msg_info = (
+            "Para más información, visita:\nhttps://github.com/anufrievroman/waypaper"
+        )
 
         self.msg_arg_help = "imprime la versión del programa"
-        self.msg_arg_fill = "específica una forma de rellenar la pantalla con la imagen escogida"
+        self.msg_arg_fill = (
+            "específica una forma de rellenar la pantalla con la imagen escogida"
+        )
         self.msg_arg_rest = "restaura la última imagen de fondo"
-        self.msg_arg_back = "específica cuál es el programa a utilizar para cambiar la imagen de fondo"
+        self.msg_arg_back = (
+            "específica cuál es el programa a utilizar para cambiar la imagen de fondo"
+        )
         self.msg_arg_rand = "aplica una imagen de fondo aleatoria"
-        self.msg_arg_list = 'imprime un listado de las imágenes de fondo al terminal en formato "JSON"'
+        self.msg_arg_list = (
+            'imprime un listado de las imágenes de fondo al terminal en formato "JSON"'
+        )
         self.msg_arg_wall = "establece el fondo especificado"
         self.msg_arg_folder = "specify which folder to scan for wallpapers"
         self.msg_arg_statefile = "specify a custom file to store the application state"
@@ -595,7 +649,9 @@ class Spanish:
         self.err_backend += "Por favor, instala uno de los siguientes programas para poder cambiar la imagen de fondo:\n\n"
         self.err_backend += "- swaybg (Wayland)\n- swww (Wayland)\n"
         self.err_backend += "- hyprpaper (Wayland)\n- feh (Xorg)\n"
-        self.err_backend += "- wallutils (Xorg & Wayland)\n- mpvpaper (Xorg & Wayland)\n\n"
+        self.err_backend += (
+            "- wallutils (Xorg & Wayland)\n- mpvpaper (Xorg & Wayland)\n\n"
+        )
         self.err_backend += self.msg_info
 
         self.tip_refresh = "Volver a almacenar la carpeta de imágenes"
@@ -612,27 +668,3 @@ class Spanish:
         self.tip_mpv_sound = "Play sound of the video"
         self.tip_timer = "How often to automatically change wallpaper"
         self.tip_start = "Initiate automatic change of wallpaper after a time interval"
-
-
-def load_language(lang):
-    """Load the language package according to selected language"""
-    if lang == "de":
-        txt = German()
-    elif lang == "fr":
-        txt = French()
-    elif lang == "ru":
-        txt = Russian()
-    elif lang == "by":
-        txt = Belarusian()
-    elif lang == "pl":
-        txt = Polish()
-    elif lang == "zh":
-        txt = Chinese()
-    elif lang == "zh_HK":
-        txt = TraditionalChinese()
-    elif lang == "es":
-        txt = Spanish()
-    else:
-        txt = English()
-    return txt
-

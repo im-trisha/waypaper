@@ -1,0 +1,164 @@
+from argparse import Action, ArgumentParser
+from typing import Any, Optional, Sequence
+from i18n import LocalizedStrings
+from waypaper.config import Config
+from waypaper.options import FillOptions, BackendOptions
+
+
+class ConfigHandler:
+    """Handles command line arguments and updates Config instance accordingly."""
+
+    def __init__(self, config: Config):
+        self.config = config
+        self.parser: Optional[ArgumentParser] = None
+
+    def create_parser(self, txt: LocalizedStrings) -> ArgumentParser:
+        """Create argument parser with configured callbacks."""
+        self.parser = ArgumentParser(
+            prog=self.config.name, description=txt.desc, epilog=txt.info
+        )
+
+        # Argument definitions with callback actions
+        self.parser.add_argument(
+            "-v", "--version", help=txt.arg_help, action=self.VersionAction
+        )
+        self.parser.add_argument(
+            "--restore", help=txt.arg_rest, action=self.RestoreAction
+        )
+        self.parser.add_argument(
+            "--random", help=txt.arg_rand, action=self.RandomAction
+        )
+        self.parser.add_argument(
+            "--fill", help=txt.arg_fill, choices=FillOptions, action=self.FillAction
+        )
+        self.parser.add_argument(
+            "--wallpaper", help=txt.arg_wall, action=self.WallpaperAction
+        )
+        self.parser.add_argument(
+            "--folder",
+            help=txt.arg_folder,
+            nargs="+",
+            default=[],
+            action=self.FolderAction,
+        )
+        self.parser.add_argument(
+            "--state-file", help=txt.arg_statefile, action=self.StateFileAction
+        )
+        self.parser.add_argument(
+            "--backend",
+            help=txt.arg_back,
+            choices=BackendOptions,
+            action=self.BackendAction,
+        )
+        self.parser.add_argument("--list", help=txt.arg_list, action=self.ListAction)
+        self.parser.add_argument(
+            "--monitor",
+            help=txt.arg_monitor,
+            choices=MONITOR_OPTIONS,
+            action=self.MonitorAction,
+        )
+        self.parser.add_argument(
+            "--no-post-command", help=txt.arg_post, action=self.PostCommandAction
+        )
+
+        return self.parser
+
+    class VersionAction(Action):
+        """Handle version flag with config-aware output."""
+
+        def __call__(self, *args: Any, **kwargs: Any) -> None:
+            print(f"Waypaper {self.handler.config.version}")
+            self.handler.parser.exit()
+
+    class RestoreAction(Action):
+        """Restore previous state from config file."""
+
+        def __call__(self, parser, namespace, values, option_string=None):
+            self.handler.config.restore_state()
+            parser.exit()
+
+    class RandomAction(Action):
+        """Set random wallpaper from configured folders."""
+
+        def __call__(self, parser, namespace, values, option_string=None):
+            self.handler.config.set_random_wallpaper()
+            self.handler.config.apply_changes()
+            parser.exit()
+
+    class FillAction(Action):
+        """Update fill option in config."""
+
+        def __call__(self, parser, namespace, values, option_string=None):
+            try:
+                self.handler.config.fill_option = FillOptions(values)
+            except ValueError as e:
+                parser.error(f"Invalid fill option: {e}")
+
+    class WallpaperAction(Action):
+        """Validate and set wallpaper path."""
+
+        def __call__(self, parser, namespace, values, option_string=None):
+            path = pathlib.Path(values).expanduser()
+            if not path.exists():
+                parser.error(f"Wallpaper not found: {values}")
+            self.handler.config.select_wallpaper(str(path))
+
+    class FolderAction(Action):
+        """Update image folders in config."""
+
+        def __call__(self, parser, namespace, values, option_string=None):
+            self.handler.config.image_folder_list = [
+                pathlib.Path(p).expanduser() for p in values if p.strip()
+            ]
+
+    class StateFileAction(Action):
+        """Handle custom state file location."""
+
+        def __call__(self, parser, namespace, values, option_string=None):
+            self.handler.config.state_file = pathlib.Path(values).expanduser()
+            self.handler.config.use_xdg_state = True
+
+    class BackendAction(Action):
+        """Validate and set backend choice."""
+
+        def __call__(self, parser, namespace, values, option_string=None):
+            if values not in self.handler.config.installed_backends:
+                parser.error(f"Backend not available: {values}")
+            self.handler.config.backend = values
+
+    class ListAction(Action):
+        """List available wallpapers from config."""
+
+        def __call__(self, parser, namespace, values, option_string=None):
+            for wp in self.handler.config.wallpapers:
+                print(self.handler.config.shorten_path(wp))
+            parser.exit()
+
+    class MonitorAction(Action):
+        """Update monitor selection in config."""
+
+        def __call__(self, parser, namespace, values, option_string=None):
+            if values not in self.handler.config.monitors:
+                parser.error(f"Invalid monitor: {values}")
+            self.handler.config.selected_monitor = values
+
+    class PostCommandAction(Action):
+        """Toggle post-command execution."""
+
+        def __call__(self, parser, namespace, values, option_string=None):
+            self.handler.config.use_post_command = False
+
+    def parse_args(self, args: Optional[Sequence[str]] = None):
+        """Parse arguments and return modified namespace."""
+        return self.parser.parse_args(args)
+
+
+# Usage example:
+config = Config()
+handler = ConfigHandler(config)
+parser = handler.create_parser(txt)  # txt contains help message translations
+args = handler.parse_args()
+
+# Apply remaining configuration after parsing
+config.validate()
+config.save()
